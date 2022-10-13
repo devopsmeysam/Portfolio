@@ -3,12 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home Page', name: 'Meysam' });
+  res.render('home', { title: 'Home Page', name: 'Portfolio' });
 });
 
 /* GET About me page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', 
+  res.render('aboutMe', 
   { 
     title: 'About Me',
     name: 'Meysam'
@@ -17,7 +17,7 @@ router.get('/about', function(req, res, next) {
 
 /* GET Contact me page. */
 router.get('/contact', function(req, res, next) {
-  res.render('index', 
+  res.render('contactMe', 
   { 
     title: 'Contact Me',
     name: 'Meysam'
@@ -26,7 +26,7 @@ router.get('/contact', function(req, res, next) {
 
 /* GET My Projects page. */
 router.get('/projects', function(req, res, next) {
-  res.render('index', 
+  res.render('myProjects', 
   { 
     title: 'My Projects',
     name: 'Meysam'
@@ -35,7 +35,7 @@ router.get('/projects', function(req, res, next) {
 
 /* GET My Services page. */
 router.get('/services', function(req, res, next) {
-  res.render('index', 
+  res.render('myServices', 
   { 
     title: 'My Services',
     name: 'Meysam'

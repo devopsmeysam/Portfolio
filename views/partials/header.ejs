@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="@fortawesome/fontawesome-free/css/all.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="../../images/fLogo.jpg" alt="Logo" height="50" width="80">
+          </div>
+          <ul class="nav navbar-nav">
+            
+                <% if(title == "Home Page"){ %>
+                    <li class="active"><a class="nav-link active" href="/"><i class="fa-solid fa-house"></i> Home Page</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home Page</a></li>
+                <% } %>
+
+                <% if(title == "About Me"){ %>
+                    <li class="active"><a class="nav-link active" href="/about"><i class="fa-solid fa-face-smile"></i> About Me</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/about"><i class="fa-solid fa-face-smile"></i> About Me</a></li>
+                <% } %>
+                
+                <% if(title == "My Projects"){ %>
+                    <li class="active"><a class="nav-link active" href="/projects"><i class="fa-solid fa-diagram-project"></i> My Projects</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/projects"><i class="fa-solid fa-diagram-project"></i> My Projects</a></li>
+                <% } %>      
+
+                <% if(title == "My Services"){ %>
+                    <li class="active"><a class="nav-link active" href="/services"><i class="fa-solid fa-desktop"></i> My Services</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/services"><i class="fa-solid fa-desktop"></i> My Services</a></li>
+                <% } %>
+
+                <% if(title == "Contact Me"){ %>
+                    <li class="active"><a class="nav-link active" href="/contact"><i class="fa-solid fa-address-book"></i> Contact Me</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i> Contact Me</a></li>
+                <% } %>
+          </ul>
+        </div>
+      </nav>
