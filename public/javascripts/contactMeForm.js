@@ -1,3 +1,9 @@
+/* Filename: contactMeForm.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Thursday, October 13th, 2022 */
+
+//JavaScript file for Contact Me form + Regular Expression for fields
 var firstName = document.getElementById("txtFirstName");
 var firstNameError = document.getElementById("firstNameError");
 
@@ -201,6 +207,7 @@ email.addEventListener("input", function(emailv) {
         email.style.backgroundColor = "#FF8F8F";
     }
 });
+//Implementation for submitting the information provided by the website users:
 /****************************************************************/
 function ajaxpost() {
     if (emailError.style.display == "none" && confirmPassError.style.display == "none" && passwordError.style.display == "none" && ageError.style.display == "none" && postalCodeError.style.display == "none" && cityError.style.display == "none" && addressError.style.display == "none" && lastNameError.style.display == "none" && firstNameError.style.display == "none") {

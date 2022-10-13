@@ -1,45 +1,51 @@
+/* Filename: style.css
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Thursday, October 13th, 2022 */
+
+/* Sets the size of the web pages */
 body {
   width: 768px;
   padding: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+/* Sets the properties of the hyperlinks */
 a {
   color: #00B7FF;
 }
-
+/* Sets the properties of the horizontal lines */
 hr {
   margin-top: 30px;
   height: 5px;
   border: none;
   background-color: #2b2b2b;
 }
-
+/* Sets the properties of the footer */
 footer{
   text-align: center;
 }
-
+/* Sets the properties of my personal photo */
 #myPic {
   border-radius: 15px;
 }
-
+/* Sets the properties of the paragraph tags */
 p {
   text-align: justify;
   text-justify: inter-word;
 }
-
+/* Sets the properties of the header tags */
 h4 {
   text-align: justify;
   text-justify: inter-word;
   padding-right: 25px;
 }
-
+/* Sets the properties of the form's fieldsets */
 fieldset {
   border-radius: 10px;
   border-color: #D9EB37;
   border-style: solid;
 }
-
+/* Sets the properties of the buttons */
 button {
   background-color: #FFFFFF;
   color: #00B7FF;
