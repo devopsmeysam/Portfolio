@@ -34,6 +34,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.1",
+    "mongoose": "^6.6.5",
     "morgan": "~1.9.1"
   }
 }

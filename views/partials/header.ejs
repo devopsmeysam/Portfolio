@@ -39,9 +39,15 @@
                 <% } %>
 
                 <% if(title == "Contact Me"){ %>
-                    <li class="active"><a class="nav-link active" href="/contact"><i class="fa-solid fa-address-book"></i> Contact Me</a></li>
+                    <li class="active"><a class="nav-link active" href="/contact"><i class="fa-solid fa-envelope"></i> Contact Me</a></li>
                 <% } else { %>
-                    <li><a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i> Contact Me</a></li>
+                    <li><a class="nav-link" href="/contact"><i class="fa-solid fa-envelope"></i> Contact Me</a></li>
+                <% } %>
+                
+                <% if(title == "Business Contact List"){ %>
+                    <li class="active"><a class="nav-link active" href="/business"><i class="fa-solid fa-address-book"></i> Business Contact List</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/business"><i class="fa-solid fa-address-book"></i> Business Contact List</a></li>
                 <% } %>
           </ul>
         </div>

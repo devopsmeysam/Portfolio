@@ -5,46 +5,25 @@ Date: Thursday, October 13th, 2022 */
 
 var express = require('express');
 var router = express.Router();
+let indexController = require('../controllers/index.controller');
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Home Page', name: 'Portfolio' });
-});
+router.get('/', indexController.home);
 
 /* GET About me page. */
-router.get('/about', function(req, res, next) {
-  res.render('aboutMe', 
-  { 
-    title: 'About Me',
-    name: 'Meysam'
-  });
-});
+router.get('/about', indexController.about);
 
 /* GET Contact me page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contactMe', 
-  { 
-    title: 'Contact Me',
-    name: 'Meysam'
-  });
-});
+router.get('/contact', indexController.contact);
 
 /* GET My Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('myProjects', 
-  { 
-    title: 'My Projects',
-    name: 'Meysam'
-  });
-});
+router.get('/projects', indexController.projects);
 
 /* GET My Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('myServices', 
-  { 
-    title: 'My Services',
-    name: 'Meysam'
-  });
-});
+router.get('/services', indexController.services);
+
+/* GET Business Contact List page. */
+router.get('/business', indexController.business);
 
 module.exports = router;
