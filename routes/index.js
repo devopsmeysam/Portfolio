@@ -26,4 +26,7 @@ router.get('/services', indexController.services);
 /* GET Business Contact List page. */
 router.get('/business', indexController.business);
 
+/* GET TEMPORARY List page. */
+router.get('/list', indexController.list);
+
 module.exports = router;

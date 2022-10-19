@@ -41,3 +41,12 @@ exports.business = function(req, res, next) {
       name: 'Meysam'
     });
 }
+
+//TEMPORARY
+exports.list = function(req, res, next) {
+  res.render('list', 
+  { 
+    title: 'Business Contact List',
+    name: 'Meysam'
+  });
+}

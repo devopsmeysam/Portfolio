@@ -1,6 +1,6 @@
 //I will need to take care of my DB access password in the following weeks.
 
-let atlasDB = "mongodb+srv://meysamdbuser:gwqUiKclkg2K4utn@cluster005.ye5t026.mongodb.net/test";
+let atlasDB = "mongodb+srv://meysamdbuser:gwqUiKclkg2K4utn@cluster005.ye5t026.mongodb.net/products";
 
 let mongoose = require('mongoose');
 
