@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
+            <br>
             <h1><%= title %></h1>
 
             <form class="form" method="POST">
@@ -12,36 +13,36 @@
                         name="id"
                         value="<%= item._id %>"
                     >
-                    <label for="itemTextField">Item Name</label>
+                    <label for="itemTextField">Contact Name</label>
                     <input type="text" class="form-control"
                         id="itemTextField"
-                        placeholder="Enter the Item Name"
+                        placeholder="Enter the Contact Name"
                         name="item" 
                         value="<%= item.item %>"
                         required>
                 </div>
                 <br />
                 <div class="form-group">
-                    <label for="QtyTextField">Quantity</label>
+                    <label for="QtyTextField">Contact Number</label>
                     <input type="number" class="form-control"
                     id="QtyTextField"
-                    placeholder="00"
+                    placeholder="Enter the Contact Number"
                     name="qty" 
                     value="<%= item.qty %>"
                     required>
                 </div>
                 <br />
                 <div class="form-group">
-                    <label for="statusTextField">Status</label>
+                    <label for="statusTextField">Email Address</label>
                     <input type="text" class="form-control"
                     id="statusTextField"
-                    placeholder="Enter a status"
+                    placeholder="Enter an Email Address"
                     name="status" 
                     value="<%= item.status %>"
                     >
                 </div>
                 <br />
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">Size</div>
                     <div class="card-body">
                         <div class="form-group">
@@ -76,13 +77,13 @@
                             required>
                         </div>
                     </div>                    
-                </div>                
-                <br />
+                </div>                 -->
                 <div class="form-group">
-                    <label for="tagTextArea">Tags <span class="text-muted">[use , to separate tags]</span></label>
+                    <!-- <span class="text-muted">[use , to separate tags]</span> -->
+                    <label for="tagTextArea">Membership </label>
                     <textarea type="text" class="form-control"
                     id="tagTextArea"
-                    placeholder="Enter the tags of the item"
+                    placeholder="Enter the membership type of this person"
                     name="tags" 
                     required>
                     <%= item.tags %>
@@ -91,12 +92,16 @@
                 <br/>
 
                 <button class="btn btn-primary" type="submit">
-                    <!-- <i class="fas fa-edit"></i>  -->
-                    Submit
+                    <% if(buttonText == "Add"){ %>
+                        <i class="fa-solid fa-user-plus"></i>
+                    <% } else { %>
+                        <i class="fa-regular fa-pen-to-square"></i> 
+                        <% } %>
+                    <%= buttonText %>
                 </button>
                 
                 <a href="/inventory/list" class="btn btn-warning">
-                    <!-- <i class="fas fa-undo"></i>  -->
+                    <i class="fas fa-undo"></i> 
                     Cancel
                 </a>
 

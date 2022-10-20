@@ -5,25 +5,26 @@
   <!-- Main Content -->
   <main class="container">
     <div class="row">
-        <h1><%= title %></h1>
+        <br>
+        <h1>Business Contact List</h1>
         <br>
         <div>
             <a href="/inventory/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fa-solid fa-user-plus"></i>
-                Add a new Item
+                Add a new Contact
             </a>                
         </div>
-
+        <br>
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
-                    <th class="text-center">Item</th>
-                    <th class="text-center">Qty</th>
-                    <th class="text-center">Status</th>
-                    <th>Size</th>
-                    <th class="text-center">Tags</th>
-                    <th class="text-center" colspan="2">Actions</th>
+                    <th class="text-center">Contact Name</th>
+                    <th class="text-center">Contact Number</th>
+                    <th class="text-center">Email Address</th>
+                    <!-- <th>Size</th> -->
+                    <th class="text-center">Membership</th>
+                    <th class="text-center" colspan="2">Modify/Delete</th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
@@ -33,11 +34,11 @@
                         <td class="text-center"><%= InventoryList[count].item %></td>
                         <td class="text-center"><%= InventoryList[count].qty %></td>
                         <td class="text-center"><%= InventoryList[count].status %></td>
-                        <td>
+                        <!-- <td>
                             Hight: <%= InventoryList[count].size.h %><br/>
                             Width: <%= InventoryList[count].size.w %><br/>
                             UOM: <%= InventoryList[count].size.uom %><br/>
-                        </td>
+                        </td> -->
                         <td class="text-center"><%= InventoryList[count].tags %></td>
                         <td class="text-center">
                             <a href="/inventory/edit/<%= InventoryList[count]._id %>" class="btn btn-primary btn-sm">

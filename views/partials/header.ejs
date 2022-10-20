@@ -44,17 +44,23 @@
                     <li><a class="nav-link" href="/contact"><i class="fa-solid fa-envelope"></i> Contact Me</a></li>
                 <% } %>
                 
-                <% if(title == "Business Contact List"){ %>
+                <!-- <% if(title == "Business Contact List"){ %>
                     <li class="active"><a class="nav-link active" href="/business"><i class="fa-solid fa-address-book"></i> Business Contact List</a></li>
                 <% } else { %>
                     <li><a class="nav-link" href="/business"><i class="fa-solid fa-address-book"></i> Business Contact List</a></li>
+                <% } %> -->
+
+                <% if(title == "Business Contact List"){ %>
+                    <li class="active"><a class="nav-link active" href="/inventory/list"><i class="fa-solid fa-address-book"></i> Business Contact List</a></li>
+                <% } else { %>
+                    <li><a class="nav-link" href="/inventory/list"><i class="fa-solid fa-address-book"></i> Business Contact List</a></li>
                 <% } %>
 
-                <% if(title == "Inventory List"){ %>
-                    <li class="active"><a class="nav-link active" href="/inventory/list"><i class="fa-solid fa-address-book"></i> Inventory List</a></li>
+                <!-- <% if(title == "Contact List" || title == "Inventory List"){ %>
+                    <li class="active"><a class="nav-link active" href="/business/list"><i class="fa-solid fa-address-book"></i> Business List</a></li>
                 <% } else { %>
-                    <li><a class="nav-link" href="/inventory/list"><i class="fa-solid fa-address-book"></i> Inventory List</a></li>
-                <% } %>
+                    <li><a class="nav-link" href="/business/list"><i class="fa-solid fa-address-book"></i> Business List</a></li>
+                <% } %> -->
           </ul>
         </div>
       </nav>

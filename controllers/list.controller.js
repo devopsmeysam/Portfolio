@@ -1,12 +1,13 @@
 let Inventory = require('../models/inventory.model');
+let List = require('../models/list.model');
 
 exports.inventoryList = function(req, res, next){
     Inventory.find((err, inventoryList) =>{
         if(err){
             return console.error(err);
         } else{
-            res.render('inventory/list', {
-                title: 'Business Contact List',
+            res.render('business/list', {
+                title: 'Contact List',
                 InventoryList: inventoryList
             })
         }
@@ -33,9 +34,8 @@ module.exports.displayEditPage = (req, res, next) => {
         {
             //show the edit view
             res.render('inventory/add_edit', {
-                title: 'Contact Modification', 
-                item: itemToEdit,
-                buttonText: 'Modify'
+                title: 'Edit Item', 
+                item: itemToEdit
             })
         }
     });
@@ -80,9 +80,8 @@ module.exports.displayAddPage = (req, res, next) => {
     let newItem = Inventory();
 
     res.render('inventory/add_edit', {
-        title: 'Add a new Contact',
-        item: newItem,
-        buttonText: 'Add'
+        title: 'Add a new Item',
+        item: newItem
     })          
 }
 

@@ -12,7 +12,7 @@ if(getTitle == "Inventory List")
     for(button of deleteButtons)
     {
         button.addEventListener('click', (event)=>{
-            if(!confirm("Are you sure?")) 
+            if(!confirm("Attention!\nThis operation permanently removes this contact")) 
             {
                 event.preventDefault();
             }
