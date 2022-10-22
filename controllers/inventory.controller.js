@@ -1,3 +1,8 @@
+/* Filename: inventory.controller.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Thursday, October 18th, 2022 */
+
 let Inventory = require('../models/inventory.model');
 
 exports.inventoryList = function(req, res, next){
@@ -7,17 +12,12 @@ exports.inventoryList = function(req, res, next){
         } else{
             res.render('inventory/list', {
                 title: 'Business Contact List',
-                InventoryList: inventoryList
+                InventoryList: inventoryList,
+                userName: req.user ? req.user.username: ''
             })
         }
-    });
+    }).sort('item');
 }
-
-
-
-
-
-
 
 
 module.exports.displayEditPage = (req, res, next) => {
@@ -35,7 +35,8 @@ module.exports.displayEditPage = (req, res, next) => {
             res.render('inventory/add_edit', {
                 title: 'Contact Modification', 
                 item: itemToEdit,
-                buttonText: 'Modify'
+                buttonText: 'Modify',
+                userName: req.user ? req.user.username: ''
             })
         }
     });
@@ -82,7 +83,8 @@ module.exports.displayAddPage = (req, res, next) => {
     res.render('inventory/add_edit', {
         title: 'Add a new Contact',
         item: newItem,
-        buttonText: 'Add'
+        buttonText: 'Add',
+        userName: req.user ? req.user.username: ''
     })          
 }
 

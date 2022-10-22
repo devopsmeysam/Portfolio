@@ -1,7 +1,5 @@
 <% include ../partials/header.ejs %>
 
-    <!-- <%= InventoryList %> -->
-
   <!-- Main Content -->
   <main class="container">
     <div class="row">
@@ -11,7 +9,7 @@
         <div>
             <a href="/inventory/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fa-solid fa-user-plus"></i>
-                Add a new Contact
+                Add a New Contact
             </a>                
         </div>
         <br>
@@ -22,7 +20,6 @@
                     <th class="text-center">Contact Name</th>
                     <th class="text-center">Contact Number</th>
                     <th class="text-center">Email Address</th>
-                    <!-- <th>Size</th> -->
                     <th class="text-center">Membership</th>
                     <th class="text-center" colspan="2">Modify/Delete</th>
                 </tr>
@@ -34,11 +31,6 @@
                         <td class="text-center"><%= InventoryList[count].item %></td>
                         <td class="text-center"><%= InventoryList[count].qty %></td>
                         <td class="text-center"><%= InventoryList[count].status %></td>
-                        <!-- <td>
-                            Hight: <%= InventoryList[count].size.h %><br/>
-                            Width: <%= InventoryList[count].size.w %><br/>
-                            UOM: <%= InventoryList[count].size.uom %><br/>
-                        </td> -->
                         <td class="text-center"><%= InventoryList[count].tags %></td>
                         <td class="text-center">
                             <a href="/inventory/edit/<%= InventoryList[count]._id %>" class="btn btn-primary btn-sm">

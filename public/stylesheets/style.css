@@ -5,7 +5,7 @@ Date: Thursday, October 13th, 2022 */
 
 /* Sets the size of the web pages */
 body {
-  width: 768px;
+  width: 1268px;
   padding: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -51,4 +51,8 @@ button {
   color: #00B7FF;
   border-radius: 8px;
   border-color: #00B7FF;
+}
+/* Sets the color of the Error Message */
+.flash {
+  color: #FF0000;
 }

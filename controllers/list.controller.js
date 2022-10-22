@@ -1,3 +1,8 @@
+/* Filename: list.controller.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Thursday, October 18th, 2022 */
+
 let Inventory = require('../models/inventory.model');
 let List = require('../models/list.model');
 
@@ -6,7 +11,7 @@ exports.inventoryList = function(req, res, next){
         if(err){
             return console.error(err);
         } else{
-            res.render('business/list', {
+            res.render.sort('business/list', {
                 title: 'Contact List',
                 InventoryList: inventoryList
             })
