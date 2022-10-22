@@ -1,17 +1,23 @@
 #!/usr/bin/env node
 
+/* Filename: WWW.js acts as server.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Thursday, October 13th, 2022 */
+
 /**
  * Module dependencies.
  */
-
+var dbConfig = require('../config/db')
 var app = require('../app');
 var debug = require('debug')('meysamportfolio:server');
 var http = require('http');
+var passportConfig = require('../config/passport');
 
 /**
  * Get port from environment and store in Express.
  */
-
+var db = dbConfig();
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -25,6 +31,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
+let passport = passportConfig();
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

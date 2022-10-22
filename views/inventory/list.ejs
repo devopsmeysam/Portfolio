@@ -1,0 +1,51 @@
+<% include ../partials/header.ejs %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <br>
+        <h1>Business Contact List</h1>
+        <br>
+        <div>
+            <a href="/inventory/add" class="btn btn-primary align-self-end" role="button">
+                <i class="fa-solid fa-user-plus"></i>
+                Add a New Contact
+            </a>                
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Contact Name</th>
+                    <th class="text-center">Contact Number</th>
+                    <th class="text-center">Email Address</th>
+                    <th class="text-center">Membership</th>
+                    <th class="text-center" colspan="2">Modify/Delete</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < InventoryList.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%= InventoryList[count].item %></td>
+                        <td class="text-center"><%= InventoryList[count].qty %></td>
+                        <td class="text-center"><%= InventoryList[count].status %></td>
+                        <td class="text-center"><%= InventoryList[count].tags %></td>
+                        <td class="text-center">
+                            <a href="/inventory/edit/<%= InventoryList[count]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/inventory/delete/<%= InventoryList[count]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+<%- include ../partials/footer.ejs %>
