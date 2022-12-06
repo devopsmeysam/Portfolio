@@ -4,7 +4,13 @@ Student ID: 301248106
 Date: Thursday, October 18th, 2022 */
 
 exports.home = function(req, res, next) {
-    res.render('home', { title: 'Home Page', name: 'Portfolio', userName: req.user ? req.user.username: '' });
+    
+    res.status(200).json(
+      {
+        success: false,
+        message: "This is the Home endpoint."
+      }
+    );
 }
 
 exports.about = function(req, res, next) {

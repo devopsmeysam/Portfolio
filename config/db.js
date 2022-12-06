@@ -12,7 +12,7 @@ let mongoose = require('mongoose');
 module.exports = function(){
     //Connects to my DataBase:
     mongoose.connect(atlasDB);
-
+    mongoose.set('strictQuery', false);
     let mongoDB = mongoose.connection;
     mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
     mongoDB.once('open', ()=>{
