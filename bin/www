@@ -12,7 +12,8 @@ var dbConfig = require('../config/db')
 var app = require('../app');
 var debug = require('debug')('meysamportfolio:server');
 var http = require('http');
-var passportConfig = require('../config/passport');
+// var passportConfig = require('../config/passport');
+var passportConfig = require('../config/local');
 
 /**
  * Get port from environment and store in Express.
