@@ -28,7 +28,16 @@ let userSchema = mongoose.Schema(
                 return password && password.length > 6;
             }, 'The password should be at least 7 characters']
         },
-        salt: String,
+        salt: {
+            type: String
+        },
+        provider: {
+            type: String,
+            required: 'Provider is required'
+        },
+        providerId: String,
+        providerData: {},
+        
         created: {
             type: Date,
             default: Date.now
