@@ -119,3 +119,23 @@ module.exports.signin = function(req, res, next){
     }
   )(req, res, next);
 }
+
+
+exports.myProfile = async function (req, res, next) {
+  
+  try {
+    let id = req.payload.id;
+    let me = await User.findById(id).select('firstName lastName email username admin created');
+
+    res.status(200).json(me);
+
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json(
+      {
+        success: false,
+        message: getErrorMessage(error)
+      }
+    );
+  }
+}

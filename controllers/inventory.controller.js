@@ -18,27 +18,25 @@ function getErrorMessage(err) {
     }
 }
 
-exports.inventoryList = function(req, res, next){
-    Inventory.find((err, inventoryList) =>{
-        if(err){
-            console.error(err);
+exports.inventoryList = async function (req, res, next) {
+    try {
+        let inventoryList = await Inventory.find().populate(
+            {
+                path: 'owner',
+                select: 'firstName lastName email username admin created'
+            }
+        );
 
-            res.status(400).json(
-                {
-                  success: false,
-                  message: getErrorMessage(err)
-                }
-            );
+        res.status(200).json(inventoryList);
 
-        } else{
-            // res.render('inventory/list', {
-            //     title: 'Business Contact List',
-            //     InventoryList: inventoryList,
-            //     userName: req.user ? req.user.username: ''
-            // })
-            res.status(200).json(inventoryList);
-        }
-    }).sort('item');
+    } catch (error) {
+        return res.status(400).json(
+            {
+                success: false,
+                message: getErrorMessage(error)
+            }
+        );
+    }
 }
 
 
@@ -58,7 +56,8 @@ module.exports.processEdit = (req, res, next) => {
             w: req.body.size.w,
             uom: req.body.size.uom,
         },
-        tags: req.body.tags.split(",").map(word => word.trim())
+        tags: (req.body.tags == "" || req.body.tags == null) ? "" : req.body.tags.split(",").map(word => word.trim()),
+        owner: (req.body.owner == null || req.body.owner == "") ? req.payload.id : req.body.owner
     });
 
     // console.log(updatedItem);
@@ -104,7 +103,8 @@ module.exports.processAdd = (req, res, next) => {
             w: req.body.size.w,
             uom: req.body.size.uom,
         },
-        tags: req.body.tags.split(",").map(word => word.trim())
+        tags: (req.body.tags == "" || req.body.tags == null) ? "" : req.body.tags.split(",").map(word => word.trim()),
+        owner: (req.body.owner == null || req.body.owner == "") ? req.payload.id : req.body.owner
     });
 
     Inventory.create(newItem, (err, item) =>{
