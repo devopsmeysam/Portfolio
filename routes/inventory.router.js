@@ -27,20 +27,20 @@ router.get('/list', inventoryController.inventoryList);
 
 
 // Routers for edit
-
+// router.put('/edit/:id', inventoryController.processEdit);
 router.put('/edit/:id', authController.requireAuth, authController.isAllowed, inventoryController.processEdit);
 // router.put('/edit/:id', passport.authenticate('tokencheck', { session: false }), inventoryController.processEdit);
 
 
-/* GET Route for displaying the Add page - CREATE Operation */
 
 
 /* POST Route for processing the Add page - CREATE Operation */
-
+// router.post('/add', inventoryController.processAdd);
 router.post('/add', authController.requireAuth, inventoryController.processAdd);
 // router.post('/add', passport.authenticate('tokencheck', { session: false }), inventoryController.processAdd);
 
 // Route for Delete
+// router.delete('/delete/:id', inventoryController.performDelete);
 router.delete('/delete/:id', authController.requireAuth, authController.isAllowed, inventoryController.performDelete);
 // router.delete('/delete/:id', passport.authenticate('tokencheck', { session: false }), inventoryController.performDelete);
 

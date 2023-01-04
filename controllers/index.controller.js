@@ -7,7 +7,7 @@ exports.home = function(req, res, next) {
     
     res.status(200).json(
       {
-        success: false,
+        success: true,
         message: "This is the Home endpoint."
       }
     );

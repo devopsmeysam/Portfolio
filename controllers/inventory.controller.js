@@ -27,7 +27,9 @@ exports.inventoryList = async function (req, res, next) {
             }
         );
 
-        res.status(200).json(inventoryList);
+        // setTimeout(() => {
+            res.status(200).json(inventoryList);
+        // }, 3000);
 
     } catch (error) {
         return res.status(400).json(
@@ -51,26 +53,27 @@ module.exports.processEdit = (req, res, next) => {
         item: req.body.item,
         qty: req.body.qty,
         status: req.body.status,
-        size : {
-            h: req.body.size.h,
-            w: req.body.size.w,
-            uom: req.body.size.uom,
-        },
+        // size : {
+        //     h: req.body.size.h,
+        //     w: req.body.size.w,
+        //     uom: req.body.size.uom,
+        // },
         tags: (req.body.tags == "" || req.body.tags == null) ? "" : req.body.tags.split(",").map(word => word.trim()),
         owner: (req.body.owner == null || req.body.owner == "") ? req.payload.id : req.body.owner
     });
 
     // console.log(updatedItem);
 
-    Inventory.updateOne({_id: id}, updatedItem, (err) => {
-        if(err)
+    Inventory.updateOne({_id: id}, updatedItem, (err, result) => {
+        console.log(err, result);
+        if(err || result.modifiedCount == 0)
         {
             console.log(err);
             // res.end(err);
             res.status(400).json(
                 {
                   success: false,
-                  message: getErrorMessage(err)
+                  message: err ? getErrorMessage(err) : "You did NOT change anything! Change a property and then try again."
                 }
             );
         }
@@ -140,15 +143,16 @@ module.exports.processAdd = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Inventory.remove({_id: id}, (err) => {
-        if(err)
+    Inventory.findByIdAndRemove({_id: id}, {rawResult: true}, (err, result) => {
+        console.log(err, result);
+        if(err || result.value == null)
         {
             console.log(err);
             // res.end(err);
             res.status(400).json(
                 {
                   success: false,
-                  message: getErrorMessage(err)
+                  message: err ? getErrorMessage(err) : "Item NOT Found!"
                 }
             );
         }

@@ -19,7 +19,11 @@ var listRouter = require('./routes/list.router');
 
 var app = express();
 
+var cors = require('cors');
 
+// enables cors
+app.use(cors());
+app.options('*', cors());
 
 
 
